@@ -25,13 +25,11 @@ const Hero = () => {
   </p>
   <Button
     onClick={handleGetStarted}
-    className="bg-[#D5AA9F] text-white font-bold py-3 px-8 rounded-full shadow hover:bg-[#F1C40F] transition"
+    className="bg-[#D5AA9F] text-white font-bold py-3 px-8 rounded-full shadow hover:bg-[#987284] transition"
   >
     Get Started
   </Button>
 </section>
-
-
     )
 }
 export default Hero;

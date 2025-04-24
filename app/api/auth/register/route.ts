@@ -22,7 +22,15 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
+    // Check for Firebase duplicate email error
+    if (error.code === 'auth/email-already-exists') {
+      return NextResponse.json(
+        { error: 'Email already exists. Please use a different email or sign in.' },
+        { status: 400 }
+      );
+    }
+    // Other errors
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'An unknown error occurred' },
       { status: 400 }

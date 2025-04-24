@@ -11,7 +11,11 @@ const DailyVisit=({ trip }: { trip: any })=>{
             <h2 className="font-bold text-lg">Places to Visit</h2>
             <div>
             {trip.tripdata[0]?.TravelPlan?.Itinerary &&
-   (Object.entries(trip.tripdata[0].TravelPlan.Itinerary) as [string, DayData][])
+   (Object.entries(trip.tripdata[0].TravelPlan.Itinerary) as [string, DayData][]).sort(([a], [b]) => {
+    const numA = parseInt(a.replace(/\D/g, ""), 10);
+    const numB = parseInt(b.replace(/\D/g, ""), 10);
+    return numA - numB;
+  })
    .map(([day, dayData])=> (
     <div key={day} className="grid grid-cols-2 gap-5">
       <div className="mt-5">

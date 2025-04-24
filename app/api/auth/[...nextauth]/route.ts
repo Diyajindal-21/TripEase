@@ -19,10 +19,8 @@ export const authOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
-        
         try {
           const userRecord = await adminAuth.getUserByEmail(credentials.email);
-          
           const verifyPasswordUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.FIREBASE_WEB_API_KEY}`;
           const resp = await fetch(verifyPasswordUrl, {
             method: 'POST',
@@ -52,7 +50,7 @@ export const authOptions = {
       if (account?.provider === "google") {
         try {
           await adminAuth.getUserByEmail(user.email!);
-          return false; // Existing user - block Google sign-in
+          return true; // Existing user - block Google sign-in
         } catch (error) {
           return true; // New user - allow Google sign-up
         }
