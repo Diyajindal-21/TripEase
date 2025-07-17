@@ -86,8 +86,9 @@ const ViewTrip = () => {
   if (!trip) return null;
 
   return (
-    <section className="w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F4E1D2] via-[#E8D5B7] to-[#D5AA9F] py-8">
-      <div className="w-full max-w-5xl mx-auto bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl px-8 py-10 flex flex-col gap-10">
+    <section className="min-h-screen w-full bg-gradient-to-br from-[#F4E1D2] via-[#E8D5B7] to-[#D5AA9F] py-4 px-2 sm:px-4 md:px-6 lg:px-8">
+  <div className="w-full max-w-5xl mx-auto bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl px-4 sm:px-6 md:px-10 py-6 sm:py-10 flex flex-col gap-8">
+
         {/* Information Section */}
         <InfoSection trip={trip} />
         {/* Recommended Hotels */}
