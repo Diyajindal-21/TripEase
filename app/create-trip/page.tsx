@@ -124,6 +124,8 @@ const CreateTrip = () => {
                                 setPlace(value);
                                 handleInputChange("location", value);
                             }}
+                            position={place?.properties?.lat && place?.properties?.lon ? { lat: place.properties.lat, lon: place.properties.lon } : undefined}
+                            filterByCountryCode={undefined} // Add any specific country codes if needed
                         />
                     </GeoapifyContext>
                 </div>
