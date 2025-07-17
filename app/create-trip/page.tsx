@@ -167,7 +167,7 @@ const CreateTrip = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                 <label className="font-medium text-[#443737]">Whom do you plan on travelling with on your next adventure?</label>
-                    <div className="flex flex-nowrap gap-4">
+                    <div className="flex flex-wrap gap-4">
                         {SelectTravelsList.map((item, index) => (
                             <div key={index} onClick={() => handleInputChange('traveler', item.people)} className={` flex-1 min-w-[120px] p-4 border rounded-lg cursor-pointer
         bg-[#F4E1D2] text-[#443737] border-[#D5AA9F]
